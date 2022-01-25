@@ -1,0 +1,41 @@
+h1 {
+    color: rgb(237, 241, 245);
+    font-size: 80px;
+}
+
+.link {
+    color: #0666e4;
+}
+
+.card {
+    display: inline-block;
+    height: 30%;
+    width: 300px;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 3%;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 0, 119);
+    background-image: linear-gradient(to bottom, rgb(112, 139, 255), rgb(133, 198, 255));
+    text-align: left;
+    
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(24, 8, 173, 0.2);
+}
+.jumbotron {
+    background: rgb(255, 0, 119);
+    border: groove 1em rgb(7, 18, 112);
+    border: thick double #32a1ce;
+    border-radius: 2em;
+    color: white;
+    margin-bottom: 5% ;
+  }
+  .card-header {
+    background: rgb(255, 0, 119);
+    color: white;
+    text-align: center;
+  }
+  
+  
