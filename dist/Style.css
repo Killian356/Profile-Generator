@@ -16,11 +16,11 @@ h1 {
     margin: 3%;
     align-items: center;
     justify-content: center;
-    color: rgb(255, 0, 119);
+    color: rgb(255, 0, 43);
     background-image: linear-gradient(to bottom, rgb(112, 139, 255), rgb(133, 198, 255));
     text-align: left;
-    
 }
+
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(24, 8, 173, 0.2);
 }
