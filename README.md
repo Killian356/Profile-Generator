@@ -17,9 +17,6 @@ To generate a set of profiles for your manager, employees, and interns offering 
 * OOP (Object Oriented Programming)
 * TDD (Test-Driven Development)
 
-## Website
-https://moneybudgeter.herokuapp.com/
-
 ## Contribution
 Made with ❤️ by Killian Chamberlain
 
