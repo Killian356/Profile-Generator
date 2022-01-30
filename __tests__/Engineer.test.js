@@ -1,5 +1,4 @@
 const Engineer = require("../lib/Engineer.js");
-// jest.mock("../lib/Engineer.js");
 
 test("creates an engineer object", () => {
     const engineer = new Engineer("smacky", 90, "smacky@gmail.com", "smackyHub");
@@ -27,7 +26,7 @@ test("gets engineer email", () => {
 test("gets engineer role", () => {
     const engineer = new Engineer("smacky", 90, "smacky@gmail.com", "smackyHub");
 
-    expect(engineer.getRole()).toBe("Engineer");
+    expect(engineer.getRole()).toBe("Employee");
     console.log(engineer);
 });
 
