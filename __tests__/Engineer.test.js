@@ -1,6 +1,6 @@
 // Engineer Test
 
-const Engineer = require("../lib/Engineer.js");
+const Engineer = require("../library/Engineer.js");
 
 test("creates an engineer object", () => {
   const engineer = new Engineer(
@@ -52,7 +52,7 @@ test("gets engineer role", () => {
     "GitHub"
   );
 
-  expect(engineer.getRole()).toBe("Employee");
+  expect(engineer.getRole()).toBe("Engineer");
   console.log(engineer);
 });
 

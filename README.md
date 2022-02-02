@@ -4,7 +4,7 @@
 To generate a set of profiles for your manager, employees, and interns offering a quick snapshot of valuable information about them.
 
 ## How Profile Looks After Generating Team
-![Screenshot](assets/images/PG-1.JPG "Profile-Generator")
+![Screenshot](images/PG-1.JPG "Profile-Generator")
 
 ## Built With
 * HTML
