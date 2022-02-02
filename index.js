@@ -172,7 +172,10 @@ function buildMyTeam() {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css"/>
+    <script src="https://kit.fontawesome.com/c502137733.js"></script>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
     <div class="container-fluid">
@@ -188,8 +191,8 @@ function buildMyTeam() {
     let object = `
       <div class="card">
         <div class="card-header">
-        <h4>${myTeam[i].title}</h4>
-        <h3>${myTeam[i].name}</h3>
+        <h3>${myTeam[i].title}</h3>
+        <h4>${myTeam[i].name}</h4>
         </div>
 
           <div class="card-content">

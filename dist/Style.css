@@ -1,27 +1,45 @@
 h1 {
-  color: rgb(255, 255, 255);
+  color: rgb(53, 48, 48);
   font-size: 80px;
   font-family: fantasy;
+  font-style: italic;
+}
+
+h4 {
+  font-family: sans-serif;
+  color: aliceblue;
+}
+h3 {
+  color: aliceblue;
+}
+
+p {
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: bolder;
+  color: rgb(0, 7, 105);
 }
 
 body {
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 1080px;
   margin-left: 15px;
   margin-right: 15px;
+  background-image: linear-gradient(to bottom, rgb(255, 123, 123), rgb(255, 167, 167));
+  background-repeat: no-repeat;
 }
 
 .card {
   display: inline-block;
   height: 30%;
   width: 300px;
-  border-radius: 20px;
+  border-radius: 15px;
   padding: 10px;
   margin: 3%;
   align-items: center;
   justify-content: center;
   border: groove 5px rgb(7, 18, 112);
-  background-image: linear-gradient(to bottom, rgb(112, 139, 255), rgb(133, 198, 255));
+  background-image: linear-gradient(to bottom, rgb(185, 197, 255), rgb(213, 235, 255));
   text-align: left;
 }
 
@@ -33,14 +51,14 @@ body {
   color: white;
   text-align: center;
   border-radius: 30px;
+  font-family: fantasy;
 }
 
 .jumbotron {
-  background: rgb(0, 172, 252);
+  background-image: linear-gradient(to bottom, rgb(150, 168, 250), rgb(162, 211, 253));
   border: groove 5px rgb(7, 18, 112);
   border-radius: 30px;
   color: white;
   margin-bottom: 5%;
 }
 
-  
