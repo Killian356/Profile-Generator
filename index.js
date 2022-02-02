@@ -5,7 +5,7 @@ const fs = require("fs");
 const Manager = require("./library/manager");
 const Engineer = require("./library/engineer");
 const Intern = require("./library/intern");
-let myTeam = [];
+let ourTeam = [];
 
 // create your teams's name
 function askUser() {
@@ -14,12 +14,12 @@ function askUser() {
       {
         type: "input",
         message: "What is the Name of your Team?",
-        name: "teamName",
+        name: "team",
       },
     ])
     .then(function (data) {
-      const teamName = data.teamName;
-      myTeam.push(teamName);
+      const team = data.team;
+      ourTeam.push(team);
       addManager();
     });
 }
@@ -30,22 +30,22 @@ function addManager() {
       {
         type: "input",
         name: "name",
-        message: "What is the Manager's name?",
+        message: "Manager's name:",
       },
       {
         type: "input",
         name: "id",
-        message: "What is the manager's employee ID?",
+        message: "Manager's employee ID:",
       },
       {
         type: "input",
         name: "email",
-        message: "What is the manager's email address?",
+        message: "Manager's email address:",
       },
       {
         type: "number",
-        name: "officeNum",
-        message: "What is the office number?",
+        name: "office",
+        message: "Office number:",
       },
     ])
     // PUSH MANAGER
@@ -53,9 +53,9 @@ function addManager() {
       const name = data.name;
       const id = data.id;
       const email = data.email;
-      const officeNum = data.officeNum;
-      const teammate = new Manager(name, id, email, officeNum); // follow up on ID
-      myTeam.push(teammate);
+      const office = data.office;
+      const teammate = new Manager(name, id, email, office); // follow up on ID
+      ourTeam.push(teammate);
       addMember();
     });
 }
@@ -66,7 +66,11 @@ function addMember() {
       {
         type: "list",
         message: "Add More Employees",
-        choices: ["Add an Engineer", "Add an Intern", "No Employees to Add - Generate Page."],
+        choices: [
+          "Add an Engineer",
+          "Add an Intern",
+          "No Employees to Add - Generate Page.",
+        ],
         name: "addTeamData",
       },
     ])
@@ -79,7 +83,7 @@ function addMember() {
           addIntern();
           break;
         case "No Employees to Add - Generate Page.":
-          buildMyTeam();
+          buildourTeam();
           break;
       }
     });
@@ -91,74 +95,74 @@ function addEngineer() {
       {
         type: "input",
         name: "name",
-        message: "What is the engineer's name?",
+        message: "Engineer's name:",
       },
       {
         type: "input",
         name: "id",
-        message: "What is the engineer's employee ID?",
+        message: "Engineer's employee ID:",
       },
       {
         type: "input",
         name: "email",
-        message: "What is the engineer's email address?",
+        message: "Engineer's email address:",
       },
       {
         type: "input",
         name: "github",
-        message: "What is the engineer's github handle?",
+        message: "Engineer's github handle:",
       },
     ])
 
-    // PUSH ENG
+    // Engineer push function
     .then(function (data) {
       let name = data.name;
       let id = data.id;
       let email = data.email;
       let github = data.github;
       let teammate = new Engineer(name, id, email, github);
-      myTeam.push(teammate);
+      ourTeam.push(teammate);
       addMember();
     });
 }
-// INTERN
+// Intern Prompts
 function addIntern() {
   inquirer
     .prompt([
       {
         type: "input",
         name: "name",
-        message: "What is the intern's name?",
+        message: "Intern's name:",
       },
       {
         type: "input",
         name: "id",
-        message: "What is the intern's employee ID?",
+        message: "Intern's employee ID:",
       },
       {
         type: "input",
         name: "email",
-        message: "What is the intern's email address?",
+        message: "Intern's email address:",
       },
       {
         type: "input",
         name: "school",
-        message: "What school does the intern attend?",
+        message: "Intern's School:",
       },
     ])
-    // PURSH INTERN
+    // Intern Push Function
     .then(function (data) {
       let name = data.name;
       let id = data.id;
       let email = data.email;
       let school = data.school;
       let teammate = new Intern(name, id, email, school);
-      myTeam.push(teammate);
+      ourTeam.push(teammate);
       addMember();
     });
 }
-// CREATE PAGE
-function buildMyTeam() {
+// Create HTML - Genration
+function buildourTeam() {
   console.log("Team Generated, check dist for HTML.");
   let pageArray = [];
   let pageHead = `<!DOCTYPE html>
@@ -167,11 +171,10 @@ function buildMyTeam() {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>${myTeam[0]} | My Department</title>
-    <meta name="description" content="Learn more about the best team: ${myTeam[0]}">
+    <title>${ourTeam[0]} | My Department</title>
+    <meta name="description" content="Learn more about the best team: ${ourTeam[0]}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c502137733.js"></script>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -181,34 +184,35 @@ function buildMyTeam() {
     <div class="container-fluid">
     <div class="row">
       <div class="col-12 jumbotron mb-3 team-heading">
-      <div class="header"><h1 class="text-center">${myTeam[0]}</h1></div>
+      <div class="header"><h1 class="text-center">${ourTeam[0]}</h1></div>
       </div>
     </div>
   </div>
       <div class="container">`;
   pageArray.push(pageHead);
-  for (let i = 1; i < myTeam.length; i++) {
+  for (let i = 1; i < ourTeam.length; i++) {
     let object = `
       <div class="card">
         <div class="card-header">
-        <h3>${myTeam[i].title}</h3>
-        <h4>${myTeam[i].name}</h4>
+        <h3>${ourTeam[i].title}</h3>
+        <h4>${ourTeam[i].name}</h4>
         </div>
 
           <div class="card-content">
-            <p><strong>EMAIL:</strong> <a href="mailto:${myTeam[i].email}">${myTeam[i].email}</a></p>
-            <p><strong>ID:</strong> ${myTeam[i].id}</p>`;
-    // Add number if Manager
-    if (myTeam[i].officeNum) {
-      object += `<p><strong>OFFICE: </strong> ${myTeam[i].officeNum}</p>`;
+            <p><strong>EMAIL:</strong> <a href="mailto:${ourTeam[i].email}">${ourTeam[i].email}</a></p>
+            <p><strong>ID:</strong> ${ourTeam[i].id}</p>`;
+
+    // Manager
+    if (ourTeam[i].office) {
+      object += `<p><strong>Office: </strong> ${ourTeam[i].office}</p>`;
     }
-    // Add Github if Engineer
-    if (myTeam[i].github) {
-      object += `<p><strong>GITHUB: </strong> <a href="https://github.com/${myTeam[i].github}" target="_blank">${myTeam[i].github}</a></p>`;
+    // Add Github for Engineer
+    if (ourTeam[i].github) {
+      object += `<p><strong>Github: </strong> <a href="https://github.com/${ourTeam[i].github}" target="_blank">${ourTeam[i].github}</a></p>`;
     }
-    // Add School if Intern
-    if (myTeam[i].school) {
-      object += `<p><strong>SCHOOL: </strong> ${myTeam[i].school}</p>`;
+    // Add School or university if Intern
+    if (ourTeam[i].school) {
+      object += `<p><strong>School: </strong> ${ourTeam[i].school}</p>`;
     }
     // End
     object += `</div></div>`;
@@ -218,7 +222,7 @@ function buildMyTeam() {
   let endPage = `</div></body></html>`;
   pageArray.push(endPage);
   fs.writeFile(
-    `./dist/${myTeam[0]}.html`,
+    `./dist/${ourTeam[0]}.html`,
     pageArray.join(""),
     function (err) {}
   );
