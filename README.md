@@ -12,10 +12,9 @@ To generate a set of profiles for your manager, employees, and interns offering 
 * Bootstrap
 * Javascript
 * Node.js
-* Jest Testing Package
+* Jest
 * Inquirer
-* OOP (Object Oriented Programming)
-* TDD (Test-Driven Development)
+* OOP
 
 ## Contribution
 Made with ❤️ by Killian Chamberlain
